@@ -1,0 +1,28 @@
+﻿@model NogaWebApplication.Models.UpdateCustomerViewModel
+
+
+@{
+}
+
+
+<h1>Edit Customer</h1>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<form method="post" action="View" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">ID</label>
+        <input type="text" class="form-control" asp-for="id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="name">
+        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Customer Number</label>
+        <input type="text" class="form-control" asp-for="customerNumber">
+        @Html.ValidationMessageFor(model => model.customerNumber, "", new { @class = "text-danger" })
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Customers">Delete</button>
+</form>

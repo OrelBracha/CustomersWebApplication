@@ -1,0 +1,31 @@
+﻿@model List<NogaWebApplication.Models.Domain.Customer>
+ 
+
+@{
+}
+<h1>Customers List</h1>
+
+<table class="table">
+	<thead>
+		<tr>
+            <th>Id</th>
+			<th>Name</th>
+			<th>Customer Number(ח"פ)</th>
+		</tr>
+    </thead>
+	<tbody>
+		@foreach (var customer in Model)
+		{
+			<tr>
+				<td>@customer.id</td>
+				<td>@customer.name</td>
+				<td>@customer.customerNumber</td>
+				<td><a href="Customers/View/@customer.id">Edit</a></td>
+				<td><a href="Customers/ShowDetails/@customer.id">Show Details</a></td>
+				<td><a href="Customers/AddContact/@customer.id">Add Contacts</a></td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+

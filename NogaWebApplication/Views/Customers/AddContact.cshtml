@@ -1,0 +1,35 @@
+﻿@model NogaWebApplication.Models.AddContactViewModel
+
+
+
+@{
+}
+
+
+
+<h1>Adding a contact</h1>
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<form method="post" action="AddContact" class="mt-5">
+	<div class="mb-3">
+        <label for="" class="form-label">Full Name</label>
+        <input type="text" class="form-control" asp-for="FullName">
+        @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Email</label>
+        <input type="text" class="form-control" asp-for="Email">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Office Number</label>
+        <input type="text" class="form-control" asp-for="OfficeNumber">
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Customer ID</label>
+        <input type="text" class="form-control" asp-for="CustomerId">
+        @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+

@@ -1,0 +1,49 @@
+﻿@model NogaWebApplication.Models.ShowDetailsViewModel
+
+
+
+@{
+}
+
+
+
+
+<h1>Customer Details - @Model.nameOfCustomer</h1>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>The Contacts</th>
+		</tr>
+	</thead>
+	<tbody>
+		    @foreach (var contact in @Model.contacts)
+			{
+			<tr>
+				<td>Full Name - @contact.FullName</td>
+				<td>Email - @contact.Email</td>
+				<td>Office Number - @contact.OfficeNumber</td>	
+			</tr>
+		    }
+	</tbody>
+</table>
+
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>The Addresses</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var address in @Model.addresses)
+		{
+			<tr>
+				<td>City - @address.city</td>
+				<td>Street - @address.street</td>
+			</tr>
+		}
+	</tbody>
+</table>
